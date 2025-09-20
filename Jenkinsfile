@@ -4,14 +4,14 @@ pipeline {
     environment {
         IMAGE_NAME = "snake-web"
         CONTAINER_NAME = "snake-web-container"
-        PORT = "8080"
+        PORT = "8000"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 echo "Cloning repository..."
-                checkout scm
+                git branch: 'main', url: 'https://github.com/CWP-Hub/Snake_Game-Docker_and_Jenkins.git'
             }
         }
 
